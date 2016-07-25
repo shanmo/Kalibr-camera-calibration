@@ -1,0 +1,1 @@
+This repo documents our calibration procedure using [Kalibr](https://github.com/ethz-asl/kalibr) camera calibration toolbox.

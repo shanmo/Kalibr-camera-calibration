@@ -1,0 +1,1 @@
+kalibr_calibrate_cameras --models omni-radtan --target april_6x4.yaml --bag 2016-07-19-15-19-30.bag --topics /camera/image_raw --show-extraction
