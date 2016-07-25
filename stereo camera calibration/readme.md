@@ -4,11 +4,13 @@ The stereo calibration requires two cameras. As such, we need to modify the came
 
 Additionally, instead of simply running ros pointgrey driver, we need to list the cameras first, and then change the id values in the launch file accordingly. 
 
-## Synchronization
+## Synchronization - preliminary test
 
 Using the default setup in the initial run leads to an error of `Cameras are not connected through mutual observations, please check the dataset. Maybe adjust the approx. sync. tolerance.`
 
-We need to change the default values by setting `--approx-sync`. By trial and error, 0.04 works. 
+We need to change the default values by setting `--approx-sync`. By trial and error, 0.04 works. However, ideally the synchronization delay should be 0 for both cameras. The images may not be properly synchronized even if the cameras are launched at the same time.  
+
+Hardware synchronization should be used to get accurate results. 
 
 ## Command
 
