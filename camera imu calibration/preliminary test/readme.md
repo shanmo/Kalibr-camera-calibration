@@ -16,11 +16,15 @@ Moreover, the rosbag file can not be too large. It should be within 1GB for the 
 
 We need to first calibrate the stereo cameras, and use the resulting cam file as input. We also need to create the `imu.yaml` based on [this](https://github.com/ethz-asl/kalibr/wiki/yaml-formats).
 
+The IMU we use is implemented in pixhawk, and the relevant data can be found [here](https://groups.google.com/forum/#!topic/px4users/Nv5nZ8PrsKM).
+
 Note that we should add `rostopic: /mavros/imu/data` in the beginning, which is not provided on the web page but is included in the [example](https://github.com/ethz-asl/kalibr/wiki/downloads).
 
 To log the data, we can use `rosbag record`, and remember to include the IMU topic as well, eg `/mavros/imu/data`. 
 
 Moreover, we can set the time interval we want to use by `--bag-from-to` as shown in the example. 
+
+For the calibration command, remember to use `--time-calibration` as suggester [here](https://github.com/ethz-asl/kalibr/issues/40). 
 
 ## Validation
 
