@@ -1,0 +1,11 @@
+## Hardware synchronization
+
+We let pixhawk trigger the two cameras at the same time, which run at 30Hz. In this way, though the IMU run at 80Hz, the timestamps of the images and the IMU data are synchronized.
+
+## Calibration
+
+Unlike stereo camera calibration, it seems we can not move the camera-IMU system in a smooth way. Instead, we need to make sure that there is significant movement. 
+
+Moreover, the rosbag file can not be too large. It should be within 1GB for the calibration to work efficiently. 
+
+   
