@@ -1,0 +1,104 @@
+Calibration results
+===================
+Reprojection error squarred (cam0):  mean 1.31028500918, median 0.602666818835, std: 2.1802382531
+Reprojection error squarred (cam1):  mean 1.57981818561, median 0.710776875268, std: 2.73390313668
+Gyro error squarred (imu0):          mean 7.04282630117, median 3.04771186718, std: 11.159276288
+Accelerometer error squarred (imu0): mean 2.67257591646, median 1.36728185569, std: 3.96273755585
+
+Transformation (cam0):
+-----------------------
+T_ci:  (imu to cam0): [m]
+[[ 0.05108404 -0.99862969 -0.01136475  0.17856499]
+ [ 0.01093549  0.01193825 -0.99986894  0.04875839]
+ [ 0.99863449  0.05095306  0.01153036 -0.02038272]
+ [ 0.          0.          0.          1.        ]]
+
+T_ic:  (cam0 to imu): [m]
+[[ 0.05108404  0.01093549  0.99863449  0.01069987]
+ [-0.99862969  0.01193825  0.05095306  0.17877677]
+ [-0.01136475 -0.99986894  0.01153036  0.05101636]
+ [ 0.          0.          0.          1.        ]]
+
+timeshift cam0 to imu0: [s] (t_imu = t_cam + shift)
+0.0
+
+
+Transformation (cam1):
+-----------------------
+T_ci:  (imu to cam1): [m]
+[[ 0.03606301 -0.99918904 -0.01790891 -0.17806923]
+ [ 0.04661093  0.01958282 -0.99872115  0.0503765 ]
+ [ 0.99826193  0.03518214  0.04727934 -0.02416458]
+ [ 0.          0.          0.          1.        ]]
+
+T_ic:  (cam1 to imu): [m]
+[[ 0.03606301  0.04661093  0.99826193  0.0281962 ]
+ [-0.99918904  0.01958282  0.03518214 -0.17806117]
+ [-0.01790891 -0.99872115  0.04727934  0.04826553]
+ [ 0.          0.          0.          1.        ]]
+
+timeshift cam1 to imu0: [s] (t_imu = t_cam + shift)
+0.0
+
+Baselines:
+----------
+Baseline (cam0 to cam1): [m]
+[[ 0.99986561  0.00637237 -0.01510448 -0.3572288 ]
+ [-0.0058247   0.99933375  0.03602947  0.00342506]
+ [ 0.01532401 -0.03593665  0.99923657 -0.00478154]
+ [ 0.          0.          0.          1.        ]]
+baseline norm:  0.357277215329 [m]
+
+
+Gravity vector in target coords: : [m/s^2]
+[-0.03737791 -9.80967199  0.07098085]
+
+
+Calibration configuration
+=========================
+
+cam0
+-----
+  Camera model: omni
+  Focal length: [1617.7988786098904, 1620.2938712382752]
+  Principal point: [1011.2216343651498, 758.747014809011]
+  Omni xi: 1.77513784253
+  Distortion model: radtan
+  Distortion coefficients: [-0.09044122275790424, 0.274588778820541, -0.000649650068048581, 0.0032854527890794853]
+  Type: aprilgrid
+  Tags: 
+    Rows: 6
+    Cols: 4
+    Size: 0.163 [m]
+    Spacing 0.028525 [m]
+
+
+cam1
+-----
+  Camera model: omni
+  Focal length: [1590.9808962889188, 1591.8704381977993]
+  Principal point: [1023.4308977661577, 774.8235769912708]
+  Omni xi: 1.73804815772
+  Distortion model: radtan
+  Distortion coefficients: [-0.09102307608372384, 0.22235047192521046, -0.0021593495431941113, 0.0033376945150219504]
+  Type: aprilgrid
+  Tags: 
+    Rows: 6
+    Cols: 4
+    Size: 0.163 [m]
+    Spacing 0.028525 [m]
+
+
+
+IMU configuration
+=================
+
+  Update rate: 160.0
+  Accelerometer:
+    Noise density: 0.013 
+    Noise density (discrete): 0.164438438329 
+    Random walk: 0.000108
+  Gyroscope:
+    Noise density: 0.00065
+    Noise density (discrete): 0.00822192191644 
+    Random walk: 2.12e-06
