@@ -16,7 +16,9 @@ Moreover, the rosbag file can not be too large. It should be within 1GB for the 
 
 We need to first calibrate the stereo cameras, and use the resulting cam file as input. We also need to create the `imu.yaml` based on [this](https://github.com/ethz-asl/kalibr/wiki/yaml-formats).
 
-The IMU we use is implemented in pixhawk, and the relevant data can be found [here](https://groups.google.com/forum/#!topic/px4users/Nv5nZ8PrsKM).
+The IMU we use is implemented in pixhawk, and according to [here](https://groups.google.com/forum/#!topic/px4users/Nv5nZ8PrsKM), the IMU model is MPU6050. Its datasheet can be found 
+at [here](https://www.invensense.com/products/motion-tracking/6-axis/mpu-6050/). Although from the [wiki](https://github.com/ethz-asl/kalibr/wiki/IMU-Noise-Model), it 
+seems that we could obtain the required data from the datasheet, we use the values mentioned in [here](https://groups.google.com/forum/#!topic/px4users/Nv5nZ8PrsKM).
 
 Note that we should add `rostopic: /mavros/imu/data` in the beginning, which is not provided on the web page but is included in the [example](https://github.com/ethz-asl/kalibr/wiki/downloads).
 
