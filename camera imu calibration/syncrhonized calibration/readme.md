@@ -12,6 +12,7 @@ For the camera, we set the exposure to 1.35, shutter speed is 0.01, gain is 10. 
 If we do not enable --time-calibration, the reprojection error is a bit large, but the T_ci is quite accurate, since the translation for both cameras to imu is 0.18m. 
 
 If we calibrate with --time-calibration, the  reprojection error is quite small (the reprojection error should be smaller than 1 pixel), however the T_ci are slightly different. 
+According to this [post](https://groups.google.com/forum/#!topic/kalibr-users/m17VpekSHtg), it is a good idea to enable time sync. 
 
 ## Note
 
@@ -20,5 +21,20 @@ The IMU frequency can be set in imu.yaml. Remember to change it if whenever the 
 If the shutter speed is changed, we need to re-calibrate the stereo camera. In fact, instead of using the camchain.yaml obtained previously, it seems better to collect rosbag of camera and imu data, then run kalibr_calibrate_cameras
 to do camera calibration, followed by kalibr_calibrate_imu_camera, since the camera settings could be changed.  
 
+## IMU parameters
+
+We are using MPU 6050, and [here](https://groups.google.com/forum/#!topic/kalibr-users/rV3vUa8d228) is a discussion about its noise model.
+
+The symbols representing different parameters can be found in the documentation of OKVIS [here]( http://ethz-asl.github.io/okvis_ros/structokvis_1_1ImuParameters.html#aff5d46f11494e24bffd0c56ddfe877f6).
+
+Based on the OKVIS code, Accelerometer saturation is a_max, and Gyroscope saturation is g_max. 
+
+Sometimes drift noise density is used in lieu of random walk.
+
+A good post about IMU could be found [here](https://zhuanlan.zhihu.com/p/20082486).
+
+## Transformation 
+
+The transformation in the result is expressed in the matrix form. It can be converted to quaternion form online [here](http://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/).
 
 
