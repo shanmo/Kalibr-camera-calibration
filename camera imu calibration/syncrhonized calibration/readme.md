@@ -24,10 +24,19 @@ to do camera calibration, followed by kalibr_calibrate_imu_camera, since the cam
 ## IMU parameters
 
 We are using MPU 6050, and [here](https://groups.google.com/forum/#!topic/kalibr-users/rV3vUa8d228) is a discussion about its noise model.
+According to the discussion, time-sync between image and IMU data is very critical. We may also have to increase the noise value obtained from Allan variance estimates.
 
 The symbols representing different parameters can be found in the documentation of OKVIS [here]( http://ethz-asl.github.io/okvis_ros/structokvis_1_1ImuParameters.html#aff5d46f11494e24bffd0c56ddfe877f6).
 
-Based on the OKVIS code, Accelerometer saturation is a_max, and Gyroscope saturation is g_max. 
+Based on the OKVIS code, Accelerometer saturation is a_max, and Gyroscope saturation is g_max. These values are defined as the full-scale range
+in the dataset. For instance, we are using MPU6050, according to the dataset: 
+
+```
+gyroscope full-scale range of ±250, ±500, ±1000, and ±2000°/sec (dps)
+accelerometer full-scale range of ±2g, ±4g, ±8g, and ±16g
+```
+
+These values are user-programmable.
 
 Sometimes drift noise density is used in lieu of random walk.
 
