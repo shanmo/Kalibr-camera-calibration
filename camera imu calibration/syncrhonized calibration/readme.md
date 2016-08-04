@@ -29,7 +29,7 @@ According to the discussion, time-sync between image and IMU data is very critic
 The symbols representing different parameters can be found in the documentation of OKVIS [here]( http://ethz-asl.github.io/okvis_ros/structokvis_1_1ImuParameters.html#aff5d46f11494e24bffd0c56ddfe877f6).
 
 Based on the OKVIS code, Accelerometer saturation is a_max, and Gyroscope saturation is g_max. These values are defined as the full-scale range
-in the dataset. For instance, we are using MPU6050, according to the dataset: 
+in the dataset. For instance, we are using MPU6050, according to the datasheet: 
 
 ```
 gyroscope full-scale range of ±250, ±500, ±1000, and ±2000°/sec (dps)
@@ -40,7 +40,7 @@ These values are user-programmable.
 
 Sometimes drift noise density is used in lieu of random walk.
 
-A good post about IMU could be found [here](https://zhuanlan.zhihu.com/p/20082486).
+A good post about IMU could be found [here](https://zhuanlan.zhihu.com/p/20082486). Another one is the [git book](http://www.crazepony.com/book/index.html).
 
 ## Transformation 
 
