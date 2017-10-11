@@ -39,6 +39,8 @@ colSpacingMeters: 0.06      #size of one chessboard square [m]
 
 Note that we need to modify the yaml file provided in the [example](https://github.com/ethz-asl/kalibr/wiki/downloads) accordingly. 
 
+## Paper size
 
+An issue about paper size is [here](https://github.com/ethz-asl/kalibr/issues/51). 
 
 
